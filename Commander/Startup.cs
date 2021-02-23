@@ -32,7 +32,9 @@ namespace Commander
 
             services.AddControllers();
 
-            services.AddScoped<ICommanderRepo, MockCommanderRepo>();
+            // The below is mock data that has been swapped for the real database
+            // services.AddScoped<ICommanderRepo, MockCommanderRepo>();
+            services.AddScoped<ICommanderRepo, SqlCommanderRepo>();
 
             services.AddSwaggerGen(c =>
             {
